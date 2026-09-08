@@ -159,9 +159,14 @@
 
   .statusbar-links {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
     font-size: 13px;
     font-family: var(--mono);
+  }
+
+  .statusbar-links .nav-sep {
+    color: var(--text-faint);
   }
 
   .statusbar-links a {
@@ -657,23 +662,6 @@
     padding-top: 3px;
   }
 
-  .exp-duration {
-    color: var(--text-dim);
-    margin-top: 8px;
-  }
-
-  .exp-tags {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    margin-top: 16px;
-  }
-
-  .exp-tags .tag {
-    font-size: 11px;
-  }
-
   .exp-role {
     font-family: var(--display);
     font-size: 17px;
@@ -1006,10 +994,13 @@
 
     <div class="statusbar-right">
       <div class="statusbar-links" id="navLinks">
-        <a href="#projects" data-section="projects">projects</a>
-        <a href="#experience" data-section="experience">experience</a>
-        <a href="#skills" data-section="skills">skills</a>
-        <a href="#contact" data-section="contact">contact</a>
+        <a href="#projects" data-section="projects">Projects</a>
+        <span class="nav-sep">·</span>
+        <a href="#experience" data-section="experience">Experience</a>
+        <span class="nav-sep">·</span>
+        <a href="#skills" data-section="skills">Skills</a>
+        <span class="nav-sep">·</span>
+        <a href="#contact" data-section="contact">Contact</a>
       </div>
 
       <span class="statusbar-clock" id="statusClock"></span>
@@ -1430,13 +1421,6 @@
 
       <div class="exp-date">
         Apr to Jul 2026
-        <div class="exp-duration">3 months · Internship</div>
-        <div class="exp-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">Docker</span>
-          <span class="tag">AWS EC2</span>
-          <span class="tag">SQLite</span>
-        </div>
       </div>
 
 
