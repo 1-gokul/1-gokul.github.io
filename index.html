@@ -537,10 +537,23 @@
     transform-box: fill-box;
   }
 
-  .step-viz .sb-final {
-    fill: var(--accent);
+  .step-viz .step-final-ring {
+    fill: none;
+    stroke: var(--ok);
+    stroke-width: 1.6;
     opacity: 0;
     transform: scale(0.5);
+    transform-origin: center;
+    transform-box: fill-box;
+    transition: opacity 0.4s ease 0.75s, transform 0.4s ease 0.75s;
+  }
+
+  .step-viz .step-final-check {
+    stroke: var(--ok);
+    stroke-dasharray: 18;
+    stroke-dashoffset: 18;
+    opacity: 0;
+    transition: opacity 0.25s ease 0.95s, stroke-dashoffset 0.45s ease 0.95s;
   }
 
   .step-viz .step-arrow,
@@ -574,10 +587,14 @@
     stroke-dashoffset: 0;
   }
 
-  .step-viz.in-view .sb-final {
+  .step-viz.in-view .step-final-ring {
     opacity: 1;
     transform: scale(1);
-    transition-delay: 0.75s;
+  }
+
+  .step-viz.in-view .step-final-check {
+    opacity: 1;
+    stroke-dashoffset: 0;
   }
 
   .project-bullets {
@@ -643,9 +660,6 @@
   /* ---------- Experience ---------- */
 
   .exp-item {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 24px;
     padding: 22px 0;
     border-top: 1px solid var(--border);
   }
@@ -659,7 +673,7 @@
     font-family: var(--mono);
     font-size: 12.5px;
     color: var(--text-faint);
-    padding-top: 3px;
+    margin-bottom: 7px;
   }
 
   .exp-role {
@@ -962,10 +976,6 @@
       text-align: left;
     }
 
-    .exp-item {
-      grid-template-columns: 1fr;
-    }
-
     .about-grid {
       grid-template-columns: 1fr;
     }
@@ -989,7 +999,7 @@
   <div class="wrap">
     <div class="statusbar-left">
       <span class="dot"></span>
-      <span>available for opportunities</span>
+      <span>Available for Opportunities</span>
     </div>
 
     <div class="statusbar-right">
@@ -1151,7 +1161,8 @@
             <rect class="step-block sb3" x="30" y="8" width="10" height="12" rx="2"></rect>
             <path class="step-arrow" d="M48 14 H72" fill="none" stroke-width="2" stroke-linecap="round"></path>
             <path class="step-arrowhead" d="M66 9 L73 14 L66 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <rect class="step-block sb-final" x="78" y="5" width="13" height="18" rx="2"></rect>
+            <circle class="step-final-ring" cx="84" cy="14" r="9"></circle>
+            <path class="step-final-check" d="M80 14 L83 17 L88 11" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
 
           <div class="num">3 → 1</div>
@@ -1521,10 +1532,6 @@
 
     <h2>Let's work together</h2>
 
-    <p class="desc">
-      Open to backend and full-stack roles. The fastest way to reach me is email — I check it daily and reply within a day or two.
-    </p>
-
     <div class="contact-links">
 
       <a class="btn primary email-btn"
@@ -1690,7 +1697,7 @@
       hour12: false
     });
 
-    var text = "local " + time + (tzShort ? " " + tzShort : "");
+    var text = "Local " + time + (tzShort ? " " + tzShort : "");
 
     if (statusClock) statusClock.textContent = text;
     if (footClock) footClock.textContent = text;
