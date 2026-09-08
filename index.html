@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --bg: #11141A;
@@ -29,18 +30,34 @@
     --display: 'Space Grotesk', sans-serif;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation: none !important; transition: none !important; }
+    html {
+      scroll-behavior: auto;
+    }
+
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 
   body {
     background:
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0) 0 0/28px 28px,
+      radial-gradient(
+        circle at 1px 1px,
+        rgba(255,255,255,0.035) 1px,
+        transparent 0
+      ) 0 0/28px 28px,
       var(--bg);
     color: var(--text);
     font-family: var(--sans);
@@ -49,20 +66,54 @@
   }
 
   @keyframes riseIn {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  .hero-label, .hero h1, .hero-role, .hero p.desc, .hero-actions, .hero-visual {
+
+  .hero-label,
+  .hero h1,
+  .hero-role,
+  .hero p.desc,
+  .hero-actions,
+  .hero-visual {
     animation: riseIn 0.6s cubic-bezier(.2,.8,.2,1) both;
   }
-  .hero-label { animation-delay: 0s; }
-  .hero h1 { animation-delay: 0.06s; }
-  .hero-role { animation-delay: 0.12s; }
-  .hero p.desc { animation-delay: 0.18s; }
-  .hero-actions { animation-delay: 0.24s; }
-  .hero-visual { animation-delay: 0.3s; }
 
-  a { color: inherit; text-decoration: none; }
+  .hero-label {
+    animation-delay: 0s;
+  }
+
+  .hero h1 {
+    animation-delay: 0.06s;
+  }
+
+  .hero-role {
+    animation-delay: 0.12s;
+  }
+
+  .hero p.desc {
+    animation-delay: 0.18s;
+  }
+
+  .hero-actions {
+    animation-delay: 0.24s;
+  }
+
+  .hero-visual {
+    animation-delay: 0.3s;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
   .wrap {
     max-width: 920px;
@@ -71,6 +122,7 @@
   }
 
   /* ---------- Top status bar ---------- */
+
   .statusbar {
     border-bottom: 1px solid var(--border);
     background: rgba(18,21,26,0.9);
@@ -79,12 +131,14 @@
     top: 0;
     z-index: 10;
   }
+
   .statusbar .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 52px;
   }
+
   .statusbar-left {
     display: flex;
     align-items: center;
@@ -93,6 +147,7 @@
     font-size: 13px;
     color: var(--text-dim);
   }
+
   .dot {
     width: 7px;
     height: 7px;
@@ -101,16 +156,24 @@
     box-shadow: 0 0 0 3px rgba(95,191,143,0.15);
     flex-shrink: 0;
   }
+
   .statusbar-links {
     display: flex;
     gap: 20px;
     font-size: 13px;
     font-family: var(--mono);
   }
-  .statusbar-links a { color: var(--text-dim); }
-  .statusbar-links a:hover { color: var(--accent); }
+
+  .statusbar-links a {
+    color: var(--text-dim);
+  }
+
+  .statusbar-links a:hover {
+    color: var(--accent);
+  }
 
   /* ---------- Hero ---------- */
+
   .hero {
     padding: 90px 0 0;
     border-bottom: 1px solid var(--border);
@@ -119,7 +182,11 @@
     gap: 40px;
     align-items: end;
   }
-  .hero-main { padding-bottom: 70px; }
+
+  .hero-main {
+    padding-bottom: 70px;
+  }
+
   .hero-label {
     font-family: var(--mono);
     font-size: 13px;
@@ -127,6 +194,7 @@
     margin-bottom: 18px;
     letter-spacing: 0.02em;
   }
+
   .hero h1 {
     font-family: var(--display);
     font-weight: 700;
@@ -136,24 +204,28 @@
     color: #fff;
     max-width: 12ch;
   }
+
   .hero-role {
     font-family: var(--mono);
     font-size: 16px;
     color: var(--blue);
     margin-top: 16px;
   }
+
   .hero p.desc {
     max-width: 52ch;
     margin-top: 22px;
     font-size: 16.5px;
     color: var(--text-dim);
   }
+
   .hero-actions {
     margin-top: 34px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
   }
+
   .hero-visual {
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -161,15 +233,36 @@
     padding: 18px 20px 20px;
     margin-bottom: 70px;
   }
+
   .hero-visual-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4px;
   }
-  .hero-visual-head .fact-label { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
-  .hero-visual .num { font-family: var(--mono); font-size: 26px; color: var(--accent); font-weight: 600; }
-  .hero-visual svg { width: 100%; height: 64px; display: block; margin-top: 8px; }
+
+  .hero-visual-head .fact-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-visual .num {
+    font-family: var(--mono);
+    font-size: 26px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .hero-visual svg {
+    width: 100%;
+    height: 64px;
+    display: block;
+    margin-top: 8px;
+  }
+
   .hero-visual-foot {
     display: flex;
     justify-content: space-between;
@@ -178,10 +271,17 @@
     color: var(--text-faint);
     margin-top: 6px;
   }
+
   @media (max-width: 780px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-visual { margin-bottom: 40px; }
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      margin-bottom: 40px;
+    }
   }
+
   .btn {
     font-family: var(--mono);
     font-size: 13px;
@@ -190,28 +290,44 @@
     border: 1px solid var(--border-bright);
     transition: border-color 0.15s ease, background 0.15s ease;
   }
-  .btn:hover { border-color: var(--accent); background: var(--panel-hover); }
+
+  .btn:hover {
+    border-color: var(--accent);
+    background: var(--panel-hover);
+  }
+
   .btn.primary {
     background: var(--accent);
     border-color: var(--accent);
     color: #14100a;
     font-weight: 500;
   }
-  .btn.primary:hover { background: #ffbe5c; border-color: #ffbe5c; }
+
+  .btn.primary:hover {
+    background: #ffbe5c;
+    border-color: #ffbe5c;
+  }
 
   /* ---------- Section headers ---------- */
-  .section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
   .section-head {
     display: flex;
     align-items: baseline;
     gap: 14px;
     margin-bottom: 36px;
   }
+
   .section-index {
     font-family: var(--mono);
     font-size: 13px;
     color: var(--text-faint);
   }
+
   .section-head h2 {
     font-family: var(--display);
     font-size: 24px;
@@ -220,6 +336,7 @@
   }
 
   /* ---------- Project cards ---------- */
+
   .project {
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -227,6 +344,7 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+
   .project-top {
     padding: 24px 26px 20px;
     display: grid;
@@ -234,53 +352,57 @@
     gap: 24px;
     align-items: start;
   }
+
   .project-title-row {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 6px;
   }
-  .project-title-row .dot { background: var(--ok); }
+
+  .project-title-row .dot {
+    background: var(--ok);
+  }
+
   .project h3 {
     font-family: var(--display);
     font-size: 19px;
     font-weight: 600;
     color: #fff;
   }
+
   .project .tagline {
     color: var(--text-dim);
     font-size: 14.5px;
     max-width: 56ch;
     margin-top: 8px;
   }
+
   .metric {
     text-align: right;
     font-family: var(--mono);
     white-space: nowrap;
     min-width: 130px;
   }
+
   .metric .num {
     font-size: 30px;
     font-weight: 600;
     color: var(--accent);
     line-height: 1;
   }
+
   .metric .label {
     font-size: 11px;
     color: var(--text-faint);
     margin-top: 4px;
   }
-  .metric svg {
-    width: 110px;
-    height: 28px;
-    margin-top: 8px;
-    display: block;
-    margin-left: auto;
-  }
+
   .project-bullets {
     padding: 0 26px 20px;
     list-style: none;
   }
+
   .project-bullets li {
     position: relative;
     padding-left: 16px;
@@ -288,12 +410,14 @@
     color: var(--text-dim);
     margin-bottom: 8px;
   }
+
   .project-bullets li::before {
     content: "›";
     position: absolute;
     left: 0;
     color: var(--text-faint);
   }
+
   .project-footer {
     border-top: 1px solid var(--border);
     padding: 14px 26px;
@@ -303,11 +427,13 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
+
   .tag {
     font-family: var(--mono);
     font-size: 11.5px;
@@ -316,16 +442,24 @@
     border-radius: var(--radius);
     padding: 3px 8px;
   }
+
   .project-links {
     display: flex;
     gap: 16px;
     font-family: var(--mono);
     font-size: 13px;
   }
-  .project-links a { color: var(--text-dim); }
-  .project-links a:hover { color: var(--accent); }
+
+  .project-links a {
+    color: var(--text-dim);
+  }
+
+  .project-links a:hover {
+    color: var(--accent);
+  }
 
   /* ---------- Experience ---------- */
+
   .exp-item {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -333,26 +467,38 @@
     padding: 22px 0;
     border-top: 1px solid var(--border);
   }
-  .exp-item:first-child { border-top: none; padding-top: 0; }
+
+  .exp-item:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
   .exp-date {
     font-family: var(--mono);
     font-size: 12.5px;
     color: var(--text-faint);
     padding-top: 3px;
   }
+
   .exp-role {
     font-family: var(--display);
     font-size: 17px;
     font-weight: 600;
     color: #fff;
   }
+
   .exp-org {
     font-family: var(--mono);
     font-size: 13px;
     color: var(--accent);
     margin-top: 2px;
   }
-  .exp-item ul { list-style: none; margin-top: 12px; }
+
+  .exp-item ul {
+    list-style: none;
+    margin-top: 12px;
+  }
+
   .exp-item li {
     position: relative;
     padding-left: 16px;
@@ -360,14 +506,22 @@
     color: var(--text-dim);
     margin-bottom: 8px;
   }
-  .exp-item li::before { content: "›"; position: absolute; left: 0; color: var(--text-faint); }
+
+  .exp-item li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
 
   /* ---------- Skills ---------- */
+
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 28px;
   }
+
   .skill-group h4 {
     font-family: var(--mono);
     font-size: 12px;
@@ -376,30 +530,72 @@
     letter-spacing: 0.06em;
     margin-bottom: 12px;
   }
-  .skill-group .tags { gap: 8px; }
+
+  .skill-group .tags {
+    gap: 8px;
+  }
 
   /* ---------- About ---------- */
+
   .about-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 40px;
   }
-  .about-text p { color: var(--text-dim); font-size: 15px; margin-bottom: 14px; max-width: 56ch; }
+
+  .about-text p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 14px;
+    max-width: 56ch;
+  }
+
   .about-facts {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--panel);
     padding: 20px;
   }
-  .fact { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .fact:last-child { border-bottom: none; padding-bottom: 0; }
-  .fact:first-child { padding-top: 0; }
-  .fact-label { font-family: var(--mono); font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.05em; }
-  .fact-value { font-size: 14.5px; color: var(--text); margin-top: 4px; }
-  .fact-value.accent { color: var(--accent); font-family: var(--mono); }
+
+  .fact {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .fact:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .fact:first-child {
+    padding-top: 0;
+  }
+
+  .fact-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .fact-value {
+    font-size: 14.5px;
+    color: var(--text);
+    margin-top: 4px;
+  }
+
+  .fact-value.accent {
+    color: var(--accent);
+    font-family: var(--mono);
+  }
 
   /* ---------- Footer / contact ---------- */
-  footer { padding: 70px 0 60px; }
+
+  footer {
+    padding: 70px 0 60px;
+  }
+
   footer h2 {
     font-family: var(--display);
     font-size: clamp(28px, 4vw, 40px);
@@ -407,13 +603,20 @@
     color: #fff;
     max-width: 14ch;
   }
-  footer .desc { color: var(--text-dim); margin-top: 14px; max-width: 48ch; }
+
+  footer .desc {
+    color: var(--text-dim);
+    margin-top: 14px;
+    max-width: 48ch;
+  }
+
   .contact-links {
     margin-top: 32px;
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
   }
+
   .foot-meta {
     margin-top: 60px;
     padding-top: 20px;
@@ -428,14 +631,29 @@
   }
 
   @media (max-width: 640px) {
-    .project-top { grid-template-columns: 1fr; }
-    .metric { text-align: left; }
-    .exp-item { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; }
-    .statusbar-links { display: none; }
+    .project-top {
+      grid-template-columns: 1fr;
+    }
+
+    .metric {
+      text-align: left;
+    }
+
+    .exp-item {
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .statusbar-links {
+      display: none;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <div class="statusbar">
@@ -444,6 +662,7 @@
       <span class="dot"></span>
       <span>available for opportunities</span>
     </div>
+
     <div class="statusbar-links">
       <a href="#projects">projects</a>
       <a href="#experience">experience</a>
@@ -452,103 +671,253 @@
   </div>
 </div>
 
+
 <section class="hero wrap">
   <div class="hero-main">
-    <div class="hero-label">GATE Qualified · Computer Science Engineer</div>
+
+    <div class="hero-label">
+      GATE Qualified · Computer Science Engineer
+    </div>
+
     <h1>Gokul Prasad</h1>
-    <div class="hero-role">Software Developer</div>
-    <p class="desc">I build software end to end, backend logic and REST APIs, the web interfaces around them, and the databases underneath, deployed with Docker and AWS, with testing and CI/CD built in from the start. I also build AI-integrated pipelines, using computer vision and object detection (YOLOv8), where a project needs it.</p>
+
+    <div class="hero-role">
+      Software Developer
+    </div>
+
+    <p class="desc">
+      I build software end to end, backend logic and REST APIs, the web interfaces around them, and the databases underneath, deployed with Docker and AWS, with testing and CI/CD built in from the start. I also build AI-integrated pipelines, using computer vision and object detection (YOLOv8), where a project needs it.
+    </p>
+
     <div class="hero-actions">
-      <a class="btn primary" href="mailto:gokulprasad497@gmail.com">Email me</a>
-      <a class="btn" href="https://github.com/1-gokul" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/gokul-prasad-cse" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn primary"
+         href="mailto:gokulprasad497@gmail.com">
+        Email me
+      </a>
+
+      <a class="btn"
+         href="https://github.com/1-gokul"
+         target="_blank"
+         rel="noopener">
+        GitHub
+      </a>
+
+      <a class="btn"
+         href="https://linkedin.com/in/gokul-prasad-cse"
+         target="_blank"
+         rel="noopener">
+        LinkedIn
+      </a>
     </div>
+
   </div>
+
+
   <div class="hero-visual">
+
     <div class="hero-visual-head">
-      <span class="fact-label">latency, p95 · biovision ai</span>
+      <span class="fact-label">
+        latency, p95 · biovision ai
+      </span>
     </div>
-    <div class="num">−27%</div>
+
+    <div class="num">
+      −27%
+    </div>
+
     <svg viewBox="0 0 300 64" preserveAspectRatio="none">
-      <polyline points="0,20 30,26 60,18 90,32 120,24 150,38 180,30 210,44 240,36 270,50 300,44"
-        fill="none" stroke="#F2A93B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      <polyline points="0,20 30,26 60,18 90,32 120,24 150,38 180,30 210,44 240,36 270,50 300,44 300,64 0,64"
-        fill="url(#g1)" stroke="none" opacity="0.5"/>
+      <polyline
+        points="0,20 30,26 60,18 90,32 120,24 150,38 180,30 210,44 240,36 270,50 300,44"
+        fill="none"
+        stroke="#F2A93B"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        opacity="0.9"
+      />
+
+      <polyline
+        points="0,20 30,26 60,18 90,32 120,24 150,38 180,30 210,44 240,36 270,50 300,44 300,64 0,64"
+        fill="url(#g1)"
+        stroke="none"
+        opacity="0.5"
+      />
+
       <defs>
         <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F2A93B" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#F2A93B" stop-opacity="0"/>
+          <stop
+            offset="0%"
+            stop-color="#F2A93B"
+            stop-opacity="0.25"
+          />
+          <stop
+            offset="100%"
+            stop-color="#F2A93B"
+            stop-opacity="0"
+          />
         </linearGradient>
       </defs>
     </svg>
+
     <div class="hero-visual-foot">
       <span>processing pipeline</span>
       <span style="color:var(--ok)">● improving</span>
     </div>
+
   </div>
 </section>
 
+
 <section class="section" id="projects">
   <div class="wrap">
+
     <div class="section-head">
       <span class="section-index">01</span>
       <h2>Projects</h2>
     </div>
 
+
+    <!-- CodeSync -->
+
     <div class="project">
+
       <div class="project-top">
+
         <div>
           <div class="project-title-row">
             <span class="dot"></span>
             <h3>CodeSync</h3>
           </div>
-          <p class="tagline">Desktop tool that automates local-to-GitHub workflows: repository management, commits, and sync history.</p>
+
+          <p class="tagline">
+            Desktop tool that automates local-to-GitHub workflows: repository management, commits, and sync history.
+          </p>
         </div>
+
+
+        <!-- New highlighted impact metric -->
+
         <div class="metric">
-          <div class="label" style="margin-bottom:4px;">sync interval</div>
-          <div class="num" style="font-size:20px;">≤ 60 min</div>
-          <div class="label">scheduled, configurable</div>
+          <div class="num">3 → 1</div>
+          <div class="label">
+            manual steps → GUI action
+          </div>
         </div>
+
       </div>
+
+
       <ul class="project-bullets">
-        <li>Developed a Python desktop application to automate local-to-GitHub workflows, using GitPython and PyGithub to manage repositories, commits, and synchronization.</li>
-        <li>Implemented scheduled repository syncing at intervals of up to 60 minutes, logging changed files, commit details, timestamps, and errors for operational traceability.</li>
+
+        <li>
+          Streamlined local-to-GitHub synchronization from 3 manual Git commands to 1 GUI action by automating staging, committing, and pushing.
+        </li>
+
+        <li>
+          Developed a Python desktop application to automate local-to-GitHub workflows, using GitPython and PyGithub to manage repositories, commits, and synchronization.
+        </li>
+
+        <li>
+          Implemented scheduled repository syncing at intervals of up to 60 minutes, logging changed files, commit details, timestamps, and errors for operational traceability.
+        </li>
+
       </ul>
+
+
       <div class="project-footer">
+
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">MongoDB</span>
           <span class="tag">GitPython</span>
         </div>
+
         <div class="project-links">
-          <a href="https://github.com/1-gokul/CodeSync" target="_blank" rel="noopener">Code ↗</a>
-          <a href="https://youtu.be/Ak8FTIfnhuw" target="_blank" rel="noopener">Demo ↗</a>
+          <a
+            href="https://github.com/1-gokul/CodeSync"
+            target="_blank"
+            rel="noopener">
+            Code ↗
+          </a>
+
+          <a
+            href="https://youtu.be/Ak8FTIfnhuw"
+            target="_blank"
+            rel="noopener">
+            Demo ↗
+          </a>
         </div>
+
       </div>
+
     </div>
 
+
+    <!-- BioVision AI -->
+
     <div class="project">
+
       <div class="project-top">
+
         <div>
+
           <div class="project-title-row">
             <span class="dot"></span>
             <h3>BioVision AI</h3>
           </div>
-          <p class="tagline">Modular FastAPI backend for microscopic blood cell detection: image analysis, history, and PDF reporting behind a clean API layer.</p>
+
+          <p class="tagline">
+            Modular FastAPI backend for microscopic blood cell detection: image analysis, history, and PDF reporting behind a clean API layer.
+          </p>
+
         </div>
+
+
         <div class="metric">
-          <div class="num">−27%</div>
-          <div class="label">processing time</div>
-          <svg viewBox="0 0 110 28" preserveAspectRatio="none">
-            <polyline points="0,6 15,9 30,7 45,13 60,11 75,17 90,15 110,20" fill="none" stroke="#F2A93B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <div class="num">
+            −27%
+          </div>
+
+          <div class="label">
+            processing time
+          </div>
+
+          <svg
+            viewBox="0 0 110 28"
+            preserveAspectRatio="none">
+
+            <polyline
+              points="0,6 15,9 30,7 45,13 60,11 75,17 90,15 110,20"
+              fill="none"
+              stroke="#F2A93B"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
           </svg>
+
         </div>
+
       </div>
+
+
       <ul class="project-bullets">
-        <li>Built a modular FastAPI backend with REST endpoints for image analysis, history, and PDF reports, backed by SQLite and an object-detection pipeline.</li>
-        <li>Containerized with Docker and implemented GitHub Actions CI with automated Pytest validation, reducing processing time by 27%.</li>
+
+        <li>
+          Built a modular FastAPI backend with REST endpoints for image analysis, history, and PDF reports, backed by SQLite and an object-detection pipeline.
+        </li>
+
+        <li>
+          Containerized with Docker and implemented GitHub Actions CI with automated Pytest validation, reducing processing time by 27%.
+        </li>
+
       </ul>
+
+
       <div class="project-footer">
+
         <div class="tags">
           <span class="tag">FastAPI</span>
           <span class="tag">YOLOv8</span>
@@ -557,84 +926,222 @@
           <span class="tag">Pytest</span>
           <span class="tag">GitHub Actions</span>
         </div>
+
         <div class="project-links">
-          <a href="https://github.com/1-gokul/BioVision-AI-Deep-Learning-Based-Microscopic-Cell-Analysis" target="_blank" rel="noopener">Code ↗</a>
-          <a href="https://youtu.be/aksRD63I5yQ" target="_blank" rel="noopener">Demo ↗</a>
+
+          <a
+            href="https://github.com/1-gokul/BioVision-AI-Deep-Learning-Based-Microscopic-Cell-Analysis"
+            target="_blank"
+            rel="noopener">
+            Code ↗
+          </a>
+
+          <a
+            href="https://youtu.be/aksRD63I5yQ"
+            target="_blank"
+            rel="noopener">
+            Demo ↗
+          </a>
+
         </div>
+
       </div>
+
     </div>
 
+
+    <!-- Instruct AI -->
+
     <div class="project">
+
       <div class="project-top">
+
         <div>
+
           <div class="project-title-row">
             <span class="dot"></span>
             <h3>Instruct AI</h3>
           </div>
-          <p class="tagline">Web assessment platform with CRUD-driven modules for users and exams, plus a real-time proctoring feature.</p>
+
+          <p class="tagline">
+            Web assessment platform with CRUD-driven modules for users and exams, plus a real-time proctoring feature.
+          </p>
+
         </div>
+
+
         <div class="metric">
-          <div class="num">91%</div>
-          <div class="label">detection accuracy</div>
-          <svg viewBox="0 0 110 28" preserveAspectRatio="none">
-            <polyline points="0,22 15,20 30,16 45,17 60,10 75,12 90,6 110,5" fill="none" stroke="#6FA8DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <div class="num">
+            91%
+          </div>
+
+          <div class="label">
+            detection accuracy
+          </div>
+
+          <svg
+            viewBox="0 0 110 28"
+            preserveAspectRatio="none">
+
+            <polyline
+              points="0,22 15,20 30,16 45,17 60,10 75,12 90,6 110,5"
+              fill="none"
+              stroke="#6FA8DC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
           </svg>
+
         </div>
+
       </div>
+
+
       <ul class="project-bullets">
-        <li>Developed a web-based assessment platform using Django, JavaScript, HTML, and CSS, with MySQL-backed CRUD workflows across application modules.</li>
-        <li>Built and integrated a real-time proctoring module, tuning the detection pipeline to achieve 91% accuracy in identifying suspicious activity.</li>
+
+        <li>
+          Developed a web-based assessment platform using Django, JavaScript, HTML, and CSS, with MySQL-backed CRUD workflows across application modules.
+        </li>
+
+        <li>
+          Built and integrated a real-time proctoring module, tuning the detection pipeline to achieve 91% accuracy in identifying suspicious activity.
+        </li>
+
       </ul>
+
+
       <div class="project-footer">
+
         <div class="tags">
           <span class="tag">Django</span>
           <span class="tag">MySQL</span>
           <span class="tag">JavaScript</span>
         </div>
+
         <div class="project-links">
-          <a href="https://github.com/1-gokul/Instruct-AI" target="_blank" rel="noopener">Code ↗</a>
-          <a href="https://youtu.be/C5FkhbTItxk" target="_blank" rel="noopener">Demo ↗</a>
+
+          <a
+            href="https://github.com/1-gokul/Instruct-AI"
+            target="_blank"
+            rel="noopener">
+            Code ↗
+          </a>
+
+          <a
+            href="https://youtu.be/C5FkhbTItxk"
+            target="_blank"
+            rel="noopener">
+            Demo ↗
+          </a>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
 </section>
 
+
 <section class="section" id="experience">
+
   <div class="wrap">
+
     <div class="section-head">
       <span class="section-index">02</span>
       <h2>Experience</h2>
     </div>
+
+
     <div class="exp-item">
-      <div class="exp-date">Apr to Jul 2026</div>
-      <div>
-        <div class="exp-role">Risk Dashboard Developer Intern</div>
-        <div class="exp-org">Zetheta</div>
-        <ul>
-          <li>Developed 13 FastAPI REST endpoints for a microservice observability and failure-prediction platform, enabling service health monitoring and backend data processing.</li>
-          <li>Built SQLite-based utilities and containerized backend services with Docker, deploying and debugging applications on AWS EC2 for reliable development and testing.</li>
-        </ul>
+
+      <div class="exp-date">
+        Apr to Jul 2026
       </div>
+
+
+      <div>
+
+        <div class="exp-role">
+          Risk Dashboard Developer Intern
+        </div>
+
+        <div class="exp-org">
+          Zetheta
+        </div>
+
+
+        <ul>
+
+          <li>
+            Developed 13 FastAPI REST endpoints for a microservice observability and failure-prediction platform, enabling service health monitoring and backend data processing.
+          </li>
+
+          <li>
+            Built SQLite-based utilities and containerized backend services with Docker, deploying and debugging applications on AWS EC2 for reliable development and testing.
+          </li>
+
+        </ul>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
+
 <section class="section" id="skills">
+
   <div class="wrap">
+
     <div class="section-head">
       <span class="section-index">03</span>
       <h2>Skills</h2>
     </div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Languages &amp; Databases</h4>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span>
-          <span class="tag">HTML/CSS</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Backend &amp; Web</h4>
 
-        
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+
+        <h4>
+          Languages &amp; Databases
+        </h4>
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">SQLite</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h4>
+          Backend &amp; Web
+        </h4>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
